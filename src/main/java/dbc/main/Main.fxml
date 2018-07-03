@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="dbc.main.MainController">
+   <top>
+       <MenuBar BorderPane.alignment="CENTER">
+           <Menu mnemonicParsing="false" text="File">
+               <MenuItem mnemonicParsing="false" onAction="#exportResult" text="Export result" />
+               <MenuItem mnemonicParsing="false" onAction="#exportLog" text="Export log" />
+               <MenuItem fx:id="switchExperiment" mnemonicParsing="false" onAction="#switchExperiment" text="Switch loader type" />
+               <MenuItem mnemonicParsing="false" onAction="#onFileClose" text="Exit" />
+           </Menu>
+           <Menu mnemonicParsing="false" text="About">
+               <MenuItem mnemonicParsing="false" text="Delete" />
+           </Menu>
+           <Menu mnemonicParsing="false" text="Help">
+               <MenuItem mnemonicParsing="false" text="About" />
+           </Menu>
+       </MenuBar>
+   </top>
+</BorderPane>

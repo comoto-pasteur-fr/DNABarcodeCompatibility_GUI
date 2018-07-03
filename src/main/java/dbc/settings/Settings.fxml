@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="254.0" prefWidth="309.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="dbc.settings.SettingsController">
+   <VBox layoutX="145.0" layoutY="27.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox prefHeight="48.0" prefWidth="456.0">
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+         <Label minHeight="-Infinity" prefHeight="27.0" text="GC content">
+            <HBox.margin>
+               <Insets left="20.0" top="10.0" />
+            </HBox.margin>
+            <font>
+               <Font name="Lucida Sans Demibold" size="12.0" />
+            </font>
+         </Label>
+         <TextField fx:id="minGC" alignment="BASELINE_CENTER" prefHeight="27.0" prefWidth="60.0" text="0">
+            <HBox.margin>
+               <Insets left="20.0" top="10.0" />
+            </HBox.margin>
+            <font>
+               <Font name="Lucida Sans Demibold" size="10.0" />
+            </font>
+         </TextField>
+         <TextField fx:id="maxGC" alignment="BASELINE_CENTER" layoutX="119.0" layoutY="20.0" prefHeight="27.0" prefWidth="60.0" text="100">
+            <HBox.margin>
+               <Insets left="50.0" top="10.0" />
+            </HBox.margin>
+            <font>
+               <Font name="Lucida Sans Demibold" size="10.0" />
+            </font>
+         </TextField>
+      </HBox>
+      <Separator maxWidth="-Infinity" prefWidth="200.0" style="-fx-background-color: 457896;">
+         <VBox.margin>
+            <Insets left="50.0" />
+         </VBox.margin>
+      </Separator>
+      <HBox prefHeight="48.0" prefWidth="456.0">
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+         <Label prefHeight="27.0" text="Homopolymer">
+            <HBox.margin>
+               <Insets left="20.0" right="30.0" top="10.0" />
+            </HBox.margin>
+         </Label>
+         <CheckBox fx:id="homopolymer" mnemonicParsing="false">
+            <HBox.margin>
+               <Insets top="10.0" />
+            </HBox.margin>
+         </CheckBox>
+      </HBox>
+      <Separator maxWidth="-Infinity" prefWidth="200.0">
+         <VBox.margin>
+            <Insets left="50.0" />
+         </VBox.margin>
+      </Separator>
+      <VBox prefHeight="131.0" prefWidth="600.0">
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+         <Label text="Distance">
+            <VBox.margin>
+               <Insets left="20.0" top="10.0" />
+            </VBox.margin>
+         </Label>
+         <HBox prefHeight="48.0" prefWidth="600.0">
+            <Label alignment="BASELINE_CENTER" prefHeight="27.0" text="Hamming">
+               <HBox.margin>
+                  <Insets left="35.0" right="25.0" top="15.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label alignment="BASELINE_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="58.5" text="Seqlev" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets left="15.0" right="40.0" top="15.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </HBox>
+         <HBox prefHeight="48.0" prefWidth="600.0">
+            <CheckBox fx:id="hamming" mnemonicParsing="false" onAction="#setHammingMetric">
+               <HBox.margin>
+                  <Insets left="48.0" right="40.0" top="5.0" />
+               </HBox.margin>
+            </CheckBox>
+            <CheckBox fx:id="seqlev" mnemonicParsing="false" onAction="#setSeqlevMetric">
+               <HBox.margin>
+                  <Insets left="35.0" right="30.0" top="5.0" />
+               </HBox.margin>
+            </CheckBox>
+            <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" text="Metric">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="metric" alignment="BASELINE_CENTER" editable="false" maxHeight="-Infinity" prefHeight="10.0" prefWidth="40.0" text="3">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+         </HBox>
+      </VBox>
+      <Separator maxWidth="-Infinity" prefWidth="200.0">
+         <VBox.margin>
+            <Insets left="50.0" />
+         </VBox.margin>
+      </Separator>
+      <HBox prefHeight="68.0" prefWidth="600.0">
+         <Button mnemonicParsing="false" onAction="#setSettingsToDefault" text="Set to Default">
+            <HBox.margin>
+               <Insets left="20.0" right="30.0" top="10.0" />
+            </HBox.margin>
+            <font>
+               <Font name="Lucida Sans Demibold" size="12.0" />
+            </font>
+         </Button>
+         <Button mnemonicParsing="false" onAction="#saveSettings" text="Save">
+            <HBox.margin>
+               <Insets right="30.0" top="10.0" />
+            </HBox.margin>
+            <font>
+               <Font name="Lucida Sans Demibold" size="13.0" />
+            </font>
+         </Button>
+         <Button mnemonicParsing="false" onAction="#cancel" text="Cancel">
+            <HBox.margin>
+               <Insets top="10.0" />
+            </HBox.margin>
+         </Button>
+      </HBox>
+   </VBox>
+</AnchorPane>

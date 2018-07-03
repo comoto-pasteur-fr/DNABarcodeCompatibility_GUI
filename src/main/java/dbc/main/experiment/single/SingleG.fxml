@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbc.main.experiment.single.SingleController">
+    <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <SplitPane dividerPositions="0.4" prefHeight="683.0" prefWidth="1000.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                <padding>
+                    <Insets bottom="10.0" />
+                </padding>
+                <VBox alignment="TOP_CENTER" prefHeight="548.0" prefWidth="234.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <TitledPane animated="false" text="Parameters">
+                        <GridPane hgap="10.0" vgap="5.0">
+                            <columnConstraints>
+                                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="80.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="NEVER" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints vgrow="SOMETIMES" />
+                                <RowConstraints vgrow="SOMETIMES" />
+                                <RowConstraints vgrow="SOMETIMES" />
+                                <RowConstraints vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <Label text="File" GridPane.rowIndex="1" />
+                            <TextField fx:id="userFile" editable="false" prefHeight="27.0" prefWidth="125.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <Button mnemonicParsing="false" onAction="#chooseAndSetFile" prefHeight="27.0" prefWidth="56.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                <font>
+                                    <Font name="Al Bayan Plain" size="10.0" />
+                                </font>
+                                <graphic>
+                                    <ImageView fx:id="browseImageView" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                        <Image url="@/icons/folder_explore.png" />
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                            <Label alignment="BASELINE_CENTER" text="Sample number" GridPane.rowIndex="2" />
+                            <TextField fx:id="sample" alignment="BASELINE_CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                            <Label text="Multiplexing level" GridPane.rowIndex="3" />
+                            <ComboBox fx:id="mx" onMousePressed="#buildMultiplexingLevel" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" />
+                            <Label text="Chemistry" />
+                            <ComboBox fx:id="chemistry" prefHeight="27.0" prefWidth="188.0" promptText="Choose a system" GridPane.columnIndex="1" GridPane.columnSpan="2147483647">
+                                <GridPane.margin>
+                                    <Insets />
+                                </GridPane.margin>
+                                <padding>
+                                    <Insets left="30.0" />
+                                </padding>
+                            </ComboBox>
+                            <Button mnemonicParsing="false" onAction="#handleSettings" prefHeight="29.0" prefWidth="56.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                        <Image url="@/icons/cog.png" />
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                        </GridPane>
+                    </TitledPane>
+                    <TabPane fx:id="indexView" prefHeight="381.0" prefWidth="293.0" tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0" VBox.vgrow="ALWAYS">
+                        <Tab text="File" />
+                    </TabPane>
+                    <Button alignment="TOP_CENTER" defaultButton="true" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#searchForASolution" prefWidth="200.0" text="Search" VBox.vgrow="NEVER">
+                        <graphic>
+                            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@/icons/page_white_find.png" />
+                            </ImageView>
+                        </graphic>
+                        <VBox.margin>
+                            <Insets top="10.0" />
+                        </VBox.margin>
+                    </Button>
+                </VBox>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0">
+                <TabPane tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <Tab text="Result Table">
+                        <graphic>
+                            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@/icons/application_view_columns.png" />
+                            </ImageView>
+                        </graphic>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <padding>
+                                <Insets bottom="10.0" />
+                            </padding>
+                            <VBox layoutX="7.0" prefHeight="661.0" prefWidth="596.0" AnchorPane.bottomAnchor="-9.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <ScrollPane prefHeight="601.0" prefWidth="596.0" VBox.vgrow="ALWAYS">
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="639.0" prefWidth="582.0">
+                                        <TableView fx:id="tableResult" prefHeight="623.0" prefWidth="599.0">
+                                            <columns>
+                                                <TableColumn prefWidth="169.0" text="sample" />
+                                                <TableColumn prefWidth="143.0" text="Lane" />
+                                                <TableColumn prefWidth="60.0" text="Id" />
+                                                <TableColumn prefWidth="120.0" text="Sequence" />
+                                            </columns>
+                                        </TableView>
+                                    </AnchorPane>
+                                </ScrollPane>
+                                <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#exportResult" prefWidth="150.0" text="Export Result">
+                                    <VBox.margin>
+                                        <Insets left="270.0" top="10.0" />
+                                    </VBox.margin>
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <Image url="@/icons/page_white_go.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </VBox>
+                        </AnchorPane>
+                    </Tab>
+                    <Tab text="Result visual">
+                        <graphic>
+                            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@/icons/application_view_tile.png" />
+                            </ImageView>
+                        </graphic>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <VBox layoutX="207.0" layoutY="107.0" prefHeight="665.0" prefWidth="626.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <ScrollPane fx:id="visual" prefHeight="665.0" prefWidth="626.0">
+                                    <VBox.margin>
+                                        <Insets />
+                                    </VBox.margin>
+                                    <padding>
+                                        <Insets top="20.0" />
+                                    </padding>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="637.0" prefWidth="586.0" style="-fx-background-color: #FFFFFF;" />
+                                </ScrollPane>
+                            </VBox>
+                        </AnchorPane>
+                    </Tab>
+                    <Tab text="Log">
+                        <graphic>
+                            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@/icons/page_white_text.png" />
+                            </ImageView>
+                        </graphic>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <VBox layoutX="7.0" prefHeight="665.0" prefWidth="626.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <ScrollPane prefHeight="639.0" prefWidth="626.0">
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="634.0" prefWidth="595.0">
+                                        <TextArea fx:id="logPane" editable="false" prefHeight="622.0" prefWidth="581.0" />
+                                    </AnchorPane>
+                                </ScrollPane>
+                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#exportLog" prefHeight="25.0" prefWidth="150.0" text="Export log">
+                                    <VBox.margin>
+                                        <Insets left="270.0" top="10.0" />
+                                    </VBox.margin>
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <Image url="@/icons/page_white_go.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </VBox>
+                        </AnchorPane>
+                    </Tab>
+                </TabPane>
+            </AnchorPane>
+        </SplitPane>
+        <GridPane prefHeight="31.0" prefWidth="989.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="517.0" minWidth="10.0" prefWidth="341.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="690.0" minWidth="10.0" prefWidth="337.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="690.0" minWidth="10.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="690.0" minWidth="10.0" prefWidth="177.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="13.0" minHeight="2.0" prefHeight="2.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <Label prefHeight="17.0" prefWidth="175.0" GridPane.columnIndex="3">
+                <padding>
+                    <Insets left="20.0" />
+                </padding>
+            </Label>
+        </GridPane>
+    </VBox>
+</fx:root>
