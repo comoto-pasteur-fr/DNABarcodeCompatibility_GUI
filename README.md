@@ -10,12 +10,12 @@ Installation
 #### Requirements
 
 * [DNABarcodeCompatibility R-package](https://github.com/comoto-pasteur-fr/DNABarcodeCompatibility#installation) installed.
-* [Java (JDK 8)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) as this version from Oracle includes JavaFx.
+* [Java (JDK 8)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) since this version from Oracle includes JavaFx.
 
 #### Downloads 
 
-* [Windows](https://www.dropbox.com/s/4v1zs355gvktwpp/DnaBarcodeCompatibility.maven.app_20180703.jar?dl=0)
-* [Unix/MacOSX](https://www.dropbox.com/s/k3wqf8ijwrt8ggq/DNABarcodeCompatibility_Unix.zip?dl=0)
+* for [Windows](https://www.dropbox.com/s/4v1zs355gvktwpp/DnaBarcodeCompatibility.maven.app_20180703.jar?dl=0)
+* for [Unix/MacOSX](https://www.dropbox.com/s/k3wqf8ijwrt8ggq/DNABarcodeCompatibility_Unix.zip?dl=0)
 
 #### Installation on Windows 
 
