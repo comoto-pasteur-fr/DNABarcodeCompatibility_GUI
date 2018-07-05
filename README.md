@@ -15,7 +15,7 @@ Installation
 #### Downloads 
 
 * for [Windows](https://www.dropbox.com/s/4v1zs355gvktwpp/DnaBarcodeCompatibility.maven.app_20180703.jar?dl=0)
-* for [Unix/MacOSX](https://www.dropbox.com/s/k3wqf8ijwrt8ggq/DNABarcodeCompatibility_Unix.zip?dl=0)
+* for [Unix/MacOSX](https://www.dropbox.com/s/wa1thx156znjdbb/DNABarcodeCompatibility_Unix.zip?dl=0)
 
 #### Installation on Windows 
 
