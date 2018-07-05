@@ -33,7 +33,7 @@ Installation
 sudo bash install.sh
 ```
 * On **Linux**: double-click on DNABarcodeCompatibility_startup.sh and select 'launch'
-* On **MacOSX**: double-click on the 'DNABarcodeCompatibility' launcher ![alt tag](https://comoto-pasteur-fr.github.io/DNABarcodeCompatibility_GUI/applet.png) (that you can place anywhere you like in your system)
+* On **MacOSX**: double-click on the 'DNABarcodeCompatibility' launcher ![alt tag](https://comoto-pasteur-fr.github.io/DNABarcodeCompatibility_GUI/icons/applet_24x24.png) (that you can place anywhere you like in your system)
 * The first time you start the application, a window pops up to set up the R library paths. To this end, open an R console and type in the `.libPaths()` command to list all paths, and simply copy and paste individual path **without** quotes into the pop up window.
 
 Documentation
