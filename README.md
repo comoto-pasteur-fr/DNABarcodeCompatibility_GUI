@@ -9,7 +9,7 @@ Installation
 
 #### Requirements
 
-* [Java (JDK 8)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) because this version from Oracle includes JavaFx.
+* [Java (JDK 8)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html); note that the version from Oracle includes the required JavaFx.
 * [DNABarcodeCompatibility R-package](https://github.com/comoto-pasteur-fr/DNABarcodeCompatibility#installation).
 * `rJava` R-package: in an R console, type in `install.packages("rJava")`. 
 
@@ -23,7 +23,7 @@ Installation
 * Unzip the downloaded file
 * Setup the R_HOME system environment variable [here](https://github.com/comoto-pasteur-fr/DNABarcodeCompatibility_GUI/tree/master/installation/windows/set_RHOME.md)
 * Double-click on the jar file 
-* The first time you start the application, a window pops up to set up the R library paths. To this end, open an R console and type in the `.libPaths()` command to list all paths, and simply copy and paste individual path **without** quotes into the pop up window.
+* The first time you start the graphical user interface, a window pops up to ask you to set up the R library paths. To this end, open an R console and type in the `.libPaths()` command to list all possible library paths. Then, from this list, copy and paste one-by-one all paths **without** quotes into each empty field of the pop up window. In this pop up window, you can add en empty field by clicling on the "+" icon.
 
 #### Installation on Unix/MacOSx
 
@@ -34,7 +34,7 @@ sudo bash install.sh
 ```
 * On **Linux**: double-click on DNABarcodeCompatibility_startup.sh and select 'launch'
 * On **MacOSX**: double-click on the 'DNABarcodeCompatibility' launcher ![alt tag](https://comoto-pasteur-fr.github.io/DNABarcodeCompatibility_GUI/icons/applet_24x24.png) (that you can place anywhere you like in your system)
-* The first time you start the application, a window pops up to set up the R library paths. To this end, open an R console and type in the `.libPaths()` command to list all paths, and simply copy and paste individual path **without** quotes into the pop up window.
+* The first time you start the graphical user interface, a window pops up to ask you to set up the R library paths. To this end, open an R console and type in the `.libPaths()` command to list all possible library paths. Then, from this list, copy and paste one-by-one all paths **without** quotes into each empty field of the pop up window. In this pop up window, you can add en empty field by clicling on the "+" icon.
 
 Documentation
 ================
