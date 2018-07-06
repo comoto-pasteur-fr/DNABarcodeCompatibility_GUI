@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #====================================
 # Make sure to run the script as root
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root (sudo)"
-  exit
-fi
+#if [ "$EUID" -ne 0 ]
+#  then echo "Please run as root (sudo)"
+#  exit
+#fi
 
 #====================================
 # Export installation folder into the PATH if not already in.
@@ -24,11 +24,12 @@ fi
 #====================================
 # Installation procedure
 [[ ! -d /usr/local/bin/ ]] && mkdir -p /usr/local/bin/
-cp DnaBarcodeCompatibility*.jar /usr/local/bin/DnaBarcodeCompatibility.jar
-cp DnaBarcodeCompatibility_startup.sh /usr/local/bin/DnaBarcodeCompatibility
+echo "Installation requires root priviledges:"
+sudo cp DnaBarcodeCompatibility*.jar /usr/local/bin/DnaBarcodeCompatibility.jar
+sudo cp DnaBarcodeCompatibility_startup.sh /usr/local/bin/DnaBarcodeCompatibility
 
-chmod ugo+rx /usr/local/bin/DnaBarcodeCompatibility*.jar
-chmod ugo+rx /usr/local/bin/DnaBarcodeCompatibility
+sudo chmod ugo+rx /usr/local/bin/DnaBarcodeCompatibility*.jar
+sudo chmod ugo+rx /usr/local/bin/DnaBarcodeCompatibility
 
 #====================================
 # Test DnaBarcodeCompatibility installation

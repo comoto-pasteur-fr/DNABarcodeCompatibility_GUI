@@ -28,9 +28,9 @@ Installation
 #### Installation on Unix/MacOSx
 
 * Unzip the downloaded file
-* Run the install.sh file as superuser in a terminal console
+* Run the install.sh file in a terminal console (requires root proviledges)
 ```
-sudo bash install.sh
+bash install.sh
 ```
 * On **Linux**: double-click on DNABarcodeCompatibility_startup.sh and select 'launch'
 * On **MacOSX**: double-click on the 'DNABarcodeCompatibility' launcher ![alt tag](https://comoto-pasteur-fr.github.io/DNABarcodeCompatibility_GUI/icons/applet_24x24.png) (that you can place anywhere you like in your system)
