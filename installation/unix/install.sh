@@ -23,8 +23,8 @@ fi
 
 #====================================
 # Installation procedure
-[[ ! -d /usr/local/bin/ ]] && mkdir -p /usr/local/bin/
-echo "Installation requires root priviledges:"
+echo "Installation now requires root priviledges:"
+[[ ! -d /usr/local/bin/ ]] && sudo mkdir -p /usr/local/bin/
 sudo cp DnaBarcodeCompatibility*.jar /usr/local/bin/DnaBarcodeCompatibility.jar
 sudo cp DnaBarcodeCompatibility_startup.sh /usr/local/bin/DnaBarcodeCompatibility
 
