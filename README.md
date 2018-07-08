@@ -16,7 +16,7 @@ Installation
 
 #### Downloads 
 
-* for [all platforms](https://www.dropbox.com/s/wa1thx156znjdbb/DNABarcodeCompatibility_Unix.zip?dl=0)
+* for [all platforms](https://www.dropbox.com/s/btkw1o8ma9ao41c/DNABarcodeCompatibility_GUI.zip?dl=0)
 
 #### Installation on Windows 
 
