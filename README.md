@@ -28,7 +28,7 @@ Installation
 #### Installation on Unix/MacOSx
 
 * Unzip the downloaded file
-* Run the install.sh file in a terminal console (requires root proviledges)
+* Run the install.sh file in a terminal console (will ask for root proviledges)
 ```
 bash install.sh
 ```
