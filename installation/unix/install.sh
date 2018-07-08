@@ -8,7 +8,7 @@
 
 #====================================
 # Export installation folder into the PATH if not already in.
-[[ ":$PATH:" != *":/usr/local/bin:"* ]] && export PATH="/usr/local/bin:${PATH}"
+[[ ":$PATH:" != *":/usr/local/bin:"* ]] && export PATH="${PATH}:/usr/local/bin"
 
 #====================================
 # Test if /usr/local/bin/DnaBarcodeCompatibility.jar exits and if so ask whether to update
@@ -42,7 +42,7 @@ hash R; [[ $? -eq 1 ]] && echo "R is not installed, please install R: https://ww
 hash R; [[ $? -eq 0 ]] && echo "Check R installation: OK" 
 
 #====================================
-# Check R version (at least R 3.3 is required)
+# Check R version (at least R 3.2 is required)
 RVERSION=$(R --version | awk '/R version/{print $3}')
 MAINRELEASE=$(echo $RVERSION | awk 'BEGIN{FS="."}{print $1}')
 SUBRELEASE=$(echo $RVERSION | awk 'BEGIN{FS="."}{print $2}')
