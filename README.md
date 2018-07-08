@@ -37,13 +37,9 @@ bash startup.sh
 Documentation
 ================
 
-* For users
+* For users: [Quick start tutorial](https://comoto-pasteur-fr.github.io/DNABarcodeCompatibility_GUI/quickstart_tutorial/quickStartTutorial.pdf)
 
-[Quick start tutorial](https://comoto-pasteur-fr.github.io/DNABarcodeCompatibility_GUI/quickstart_tutorial/quickStartTutorial.pdf)
-
-* For developers
-
-[API documentation](https://comoto-pasteur-fr.github.io/DNABarcodeCompatibility_GUI/)
+* For developers: [API documentation](https://comoto-pasteur-fr.github.io/DNABarcodeCompatibility_GUI/)
 
 
 Support
