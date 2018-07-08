@@ -26,7 +26,7 @@ fi
 
 export R_HOME=$(R RHOME)
 
-#java -jar /usr/local/bin/DnaBarcodeCompatibility.jar
-java -jar ./DnaBarcodeCompatibility.maven.app_[0-9].*.jar
+JAR=$(find . -depth 1 | grep DnaBarcodeCompatibility.maven.app_[0-9].*.jar)
+java -jar $JAR
 
 exit 0
