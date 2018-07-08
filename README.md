@@ -21,7 +21,7 @@ Installation
 #### Installation on Windows 
 
 * Unzip the downloaded file
-* Setup the R_HOME system environment variable [here](https://github.com/comoto-pasteur-fr/DNABarcodeCompatibility_GUI/tree/master/installation/windows/set_RHOME.md)
+* Setup the R_HOME system environment variable [here](https://comoto-pasteur-fr.github.io/DNABarcodeCompatibility_GUI/installation/windows/set_RHOME.html)
 * Double-click on the jar file 
 * Then refer to the [Quick start tutorial](https://comoto-pasteur-fr.github.io/DNABarcodeCompatibility_GUI/quickstart_tutorial/quickStartTutorial.pdf) to set up and use the DNABarcodeCompatibility user interface
 
