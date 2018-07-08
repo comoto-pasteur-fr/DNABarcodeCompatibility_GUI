@@ -28,10 +28,8 @@ Installation
 #### Installation on Unix/MacOSx
 
 * Unzip the downloaded file
-* Within a terminal console, go to the DNABarcodeCompatibility_GUI folder and run the command:
-```
-bash startup.sh
-```
+* Within a terminal console, go to the DNABarcodeCompatibility_GUI folder and run the command `bash startup.sh`
+
 * Then refer to the [Quick start tutorial](https://comoto-pasteur-fr.github.io/DNABarcodeCompatibility_GUI/quickstart_tutorial/quickStartTutorial.pdf) to set up and use the DNABarcodeCompatibility user interface
 
 Documentation
