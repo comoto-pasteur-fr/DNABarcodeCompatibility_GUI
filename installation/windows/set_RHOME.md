@@ -11,10 +11,6 @@
 ![](R.png)
 
 2. Do one of the following:
-
-    **Windows 7** – Right click **My Computer** and select **Properties > Advanced**
-    
-    **Windows 8** – Go to **Control Panel > System > Advanced System Settings**
     
     **Windows 10** – Search for **Environment Variables** then select **Edit the system environment variables**
 
