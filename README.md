@@ -35,7 +35,7 @@ Start up / installation
 
 #### Using a launcher for MacOSX
 
-* Download [DNABarcodeCompatibility_GUI_osx.zip](https://www.dropbox.com/s/btkw1o8ma9ao41c/DNABarcodeCompatibility_GUI.zip?dl=0)
+* Coming soon...
 
 
 Documentation
