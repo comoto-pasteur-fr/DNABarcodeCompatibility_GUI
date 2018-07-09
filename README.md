@@ -4,7 +4,7 @@ About
 Java front-end for the DNABarcodeCompatibility R-package.
 
 
-Installation 
+Start up / installation 
 ================
 
 #### Requirements
@@ -15,23 +15,28 @@ Installation
 * `rJava` R-package: in an R console, type in `install.packages("rJava")`. 
 
 
-#### Downloads 
+#### Download for all platforms
 
-* for [all platforms](https://www.dropbox.com/s/btkw1o8ma9ao41c/DNABarcodeCompatibility_GUI.zip?dl=0)
+* [DNABarcodeCompatibility_GUI.zip](https://www.dropbox.com/s/3ed2k69c68j2c9q/DNABarcodeCompatibility_GUI.zip?dl=0)
 
-#### Installation on Windows 
+#### Quick start on Windows 
 
 * Unzip the downloaded file
 * Setup the R_HOME system environment variable [here](https://comoto-pasteur-fr.github.io/DNABarcodeCompatibility_GUI/installation/windows/set_RHOME.html)
 * Double-click on the jar file 
 * Then refer to the [Quick start tutorial](https://comoto-pasteur-fr.github.io/DNABarcodeCompatibility_GUI/quickstart_tutorial/quickStartTutorial.pdf) to set up and use the DNABarcodeCompatibility user interface
 
-#### Installation on Unix/MacOSx
+#### Quick start on Unix/MacOSx
 
 * Unzip the downloaded file
 * Within a terminal console, go to the DNABarcodeCompatibility_GUI folder and run the command `bash startup.sh`
 
 * Then refer to the [Quick start tutorial](https://comoto-pasteur-fr.github.io/DNABarcodeCompatibility_GUI/quickstart_tutorial/quickStartTutorial.pdf) to set up and use the DNABarcodeCompatibility user interface
+
+#### Using a launcher for MacOSX
+
+* Download [DNABarcodeCompatibility_GUI_osx.zip](https://www.dropbox.com/s/btkw1o8ma9ao41c/DNABarcodeCompatibility_GUI.zip?dl=0)
+
 
 Documentation
 ================
