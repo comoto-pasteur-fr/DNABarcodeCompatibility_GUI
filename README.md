@@ -9,7 +9,7 @@ Start up / installation
 
 #### Requirements
 
-* 64-bit Operating System
+* 64-bit Operating System (Unix, Windows 10)
 * [Java (JDK 8 - 64 bits)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html); note that the version from Oracle includes the required JavaFx.
 * [DNABarcodeCompatibility R-package](https://github.com/comoto-pasteur-fr/DNABarcodeCompatibility#installation).
 * `rJava` R-package: in an R console, type in `install.packages("rJava")`. 
@@ -19,7 +19,7 @@ Start up / installation
 
 * [DNABarcodeCompatibility_GUI.zip](https://www.dropbox.com/s/3ed2k69c68j2c9q/DNABarcodeCompatibility_GUI.zip?dl=0)
 
-#### Quick start on Windows 
+#### Quick start on Windows 10
 
 * Unzip the downloaded file
 * Setup the R_HOME system environment variable [here](https://comoto-pasteur-fr.github.io/DNABarcodeCompatibility_GUI/installation/windows/set_RHOME.html)
