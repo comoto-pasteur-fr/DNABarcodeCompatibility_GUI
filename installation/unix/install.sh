@@ -8,11 +8,13 @@
 
 #====================================
 # Export installation folder into the PATH if not already in.
-[[ ":$PATH:" != *":/usr/local/bin:"* ]] && export PATH="${PATH}:/usr/local/bin"
+INSTALL_PATH="$HOME/Applications/DNABarcodeCompatibility"
+[[ ":$PATH:" != *":$INSTALL_PATH:"* ]] && export PATH="${PATH}:$INSTALL_PATH"
+[[ ! -d $INSTALL_PATH ]] && mkdir -p $INSTALL_PATH
 
 #====================================
 # Test if /usr/local/bin/DnaBarcodeCompatibility.jar exits and if so ask whether to update
-if [ -f /usr/local/bin/DnaBarcodeCompatibility.jar ]; then
+if [ -f $INSTALL_PATH/DnaBarcodeCompatibility.jar ]; then
 	ANSWER="";
 	while [ ! "$ANSWER" = "Y" -a ! "$ANSWER" = "Yes" -a  ! "$ANSWER" = "No" -a  ! "$ANSWER" = "N" ] ; do
 		read -p "DnaBarcodeCompatibility is already installed. Force installation? Yes/No: " ANSWER
@@ -23,10 +25,13 @@ fi
 
 #====================================
 # Installation procedure
-echo "Installation now requires root priviledges:"
-[[ ! -d /usr/local/bin/ ]] && sudo mkdir -p /usr/local/bin/
-sudo cp DnaBarcodeCompatibility*.jar /usr/local/bin/DnaBarcodeCompatibility.jar
-sudo cp DnaBarcodeCompatibility_startup.sh /usr/local/bin/DnaBarcodeCompatibility
+cp DnaBarcodeCompatibility*.jar /usr/local/bin/DnaBarcodeCompatibility.jar
+cp DnaBarcodeCompatibility_startup.sh /usr/local/bin/DnaBarcodeCompatibility
+
+#echo "Installation now requires root priviledges:"
+#[[ ! -d $INSTALL_PATH ]] && sudo mkdir -p /usr/local/bin/
+#sudo cp DnaBarcodeCompatibility*.jar /usr/local/bin/DnaBarcodeCompatibility.jar
+#sudo cp DnaBarcodeCompatibility_startup.sh /usr/local/bin/DnaBarcodeCompatibility
 
 sudo chmod ugo+rx /usr/local/bin/DnaBarcodeCompatibility*.jar
 sudo chmod ugo+rx /usr/local/bin/DnaBarcodeCompatibility
