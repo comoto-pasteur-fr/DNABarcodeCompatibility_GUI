@@ -26,7 +26,7 @@ fi
 
 export R_HOME=$(R RHOME)
 
-JAR=$(find . -depth 1 | grep DnaBarcodeCompatibility.maven.app_[0-9].*.jar)
+JAR=DnaBarcodeCompatibility.maven.app_20180703.jar
 java -jar $JAR
 
 exit 0
