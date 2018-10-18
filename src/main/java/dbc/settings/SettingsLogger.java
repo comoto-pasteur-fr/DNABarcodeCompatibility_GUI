@@ -16,6 +16,7 @@ public class SettingsLogger {
     public static final String Homopolymer = "Homopolymer";
     public static final String Hamming = "Hamming";
     public static final String SeqLev = "SeqLev";
+    public static final String Phaseshift = "Phaseshift";
     public static final String MetricD = "MetricD";
 
 

@@ -41,6 +41,10 @@ public class SettingsController implements Initializable{
     @FXML
     private CheckBox seqlev;
 
+    /** if Phaseshift distance have to be taken to account.*/
+    @FXML
+    private CheckBox phaseshift;
+
     /** the minimum value of GC content.*/
     @FXML
     private TextField minGC;
@@ -61,8 +65,6 @@ public class SettingsController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         modification = false;
         setSettingWindow();
-
-
     }
 
     /**
@@ -75,6 +77,7 @@ public class SettingsController implements Initializable{
         SettingsLogger.set(SettingsLogger.Homopolymer, Boolean.toString(homopolymer.isSelected()));
         SettingsLogger.set(SettingsLogger.Hamming, Boolean.toString(hamming.isSelected()));
         SettingsLogger.set(SettingsLogger.SeqLev, Boolean.toString(seqlev.isSelected()));
+        SettingsLogger.set(SettingsLogger.Phaseshift, Boolean.toString(phaseshift.isSelected()));
         SettingsLogger.set(SettingsLogger.MetricD, metric.getText());
 
 
@@ -98,6 +101,7 @@ public class SettingsController implements Initializable{
         this.maxGC.setText("100");
         this.homopolymer.setSelected(false);
         this.hamming.setSelected(false);
+        this.phaseshift.setSelected(false);
         this.setHammingMetric();
         this.seqlev.setSelected(false);
         this.setSeqlevMetric();
@@ -114,6 +118,7 @@ public class SettingsController implements Initializable{
         if(this.hamming.isSelected()){
             this.metric.setEditable(true);
             this.seqlev.setSelected(false);
+            this.phaseshift.setSelected(false);
         }
     }
 
@@ -122,6 +127,17 @@ public class SettingsController implements Initializable{
         if(this.seqlev.isSelected()){
             this.metric.setEditable(true);
             this.hamming.setSelected(false);
+            this.phaseshift.setSelected(false);
+        }
+
+    }
+
+    @FXML
+    void setPhaseshiftMetric(){
+        if(this.phaseshift.isSelected()){
+            this.metric.setEditable(true);
+            this.hamming.setSelected(false);
+            this.seqlev.setSelected(false);
         }
 
     }
@@ -135,6 +151,7 @@ public class SettingsController implements Initializable{
         this.homopolymer.setSelected(Boolean.parseBoolean(SettingsLogger.get(SettingsLogger.Homopolymer)));
         this.hamming.setSelected(Boolean.parseBoolean(SettingsLogger.get(SettingsLogger.Hamming)));
         this.seqlev.setSelected(Boolean.parseBoolean(SettingsLogger.get(SettingsLogger.SeqLev)));
+        this.phaseshift.setSelected(Boolean.parseBoolean(SettingsLogger.get(SettingsLogger.Phaseshift)));
         this.metric.setText(SettingsLogger.get(SettingsLogger.MetricD));
     }
 

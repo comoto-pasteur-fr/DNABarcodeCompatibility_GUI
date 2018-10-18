@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="254.0" prefWidth="309.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="dbc.settings.SettingsController">
+<AnchorPane prefHeight="254.0" prefWidth="309.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbc.settings.SettingsController">
    <VBox layoutX="145.0" layoutY="27.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <HBox prefHeight="48.0" prefWidth="456.0">
          <VBox.margin>
@@ -79,7 +79,7 @@
          <HBox prefHeight="48.0" prefWidth="600.0">
             <Label alignment="BASELINE_CENTER" prefHeight="27.0" text="Hamming">
                <HBox.margin>
-                  <Insets left="35.0" right="25.0" top="15.0" />
+                  <Insets left="20.0" top="15.0" />
                </HBox.margin>
                <font>
                   <Font size="11.0" />
@@ -87,27 +87,40 @@
             </Label>
             <Label alignment="BASELINE_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="58.5" text="Seqlev" textAlignment="CENTER">
                <HBox.margin>
-                  <Insets left="15.0" right="40.0" top="15.0" />
+                  <Insets left="15.0" top="15.0" />
                </HBox.margin>
                <font>
                   <Font size="11.0" />
                </font>
             </Label>
+            <Label alignment="BASELINE_CENTER" layoutX="135.0" layoutY="25.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="58.5" text="Phaseshift" textAlignment="CENTER">
+               <font>
+                  <Font size="11.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin>
+            </Label>
          </HBox>
          <HBox prefHeight="48.0" prefWidth="600.0">
             <CheckBox fx:id="hamming" mnemonicParsing="false" onAction="#setHammingMetric">
                <HBox.margin>
-                  <Insets left="48.0" right="40.0" top="5.0" />
+                  <Insets left="30.0" right="30.0" top="5.0" />
                </HBox.margin>
             </CheckBox>
             <CheckBox fx:id="seqlev" mnemonicParsing="false" onAction="#setSeqlevMetric">
                <HBox.margin>
-                  <Insets left="35.0" right="30.0" top="5.0" />
+                  <Insets left="10.0" right="30.0" top="5.0" />
+               </HBox.margin>
+            </CheckBox>
+            <CheckBox fx:id="phaseshift" layoutX="164.0" layoutY="15.0" mnemonicParsing="false" onAction="#setPhaseshiftMetric">
+               <HBox.margin>
+                  <Insets top="5.0" />
                </HBox.margin>
             </CheckBox>
             <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" text="Metric">
                <HBox.margin>
-                  <Insets top="5.0" />
+                  <Insets left="20.0" top="5.0" />
                </HBox.margin>
                <font>
                   <Font size="11.0" />

@@ -12,6 +12,7 @@ public class Preferences {
     private boolean homopolymer;
     private boolean hammingDistanceFilter;
     private boolean seqLevDistanceFilter;
+    private boolean phaseshiftDistanceFilter;
     private int metric;
 
     public Preferences() {
@@ -21,6 +22,7 @@ public class Preferences {
             SettingsLogger.set(SettingsLogger.Homopolymer, "false");
             SettingsLogger.set(SettingsLogger.Hamming, "false");
             SettingsLogger.set(SettingsLogger.SeqLev, "false");
+            SettingsLogger.set(SettingsLogger.Phaseshift, "false");
             SettingsLogger.set(SettingsLogger.MetricD, "3");
         }
         setPreferences();
@@ -66,8 +68,16 @@ public class Preferences {
         this.seqLevDistanceFilter = seqLevDistanceFilter;
     }
 
+    private boolean isPhaseshiftDistanceFilter() {
+        return phaseshiftDistanceFilter;
+    }
+
+    private void setPhaseshiftDistanceFilter(boolean phaseshiftDistanceFilter) {
+        this.phaseshiftDistanceFilter = phaseshiftDistanceFilter;
+    }
+
     public Integer getMetric() {
-        if (isHammingDistanceFilter()|| isSeqLevDistanceFilter()) {
+        if (isHammingDistanceFilter()|| isSeqLevDistanceFilter() || isPhaseshiftDistanceFilter()) {
             return metric ;
         } else {
             return (3);//beware the log text put na instead of 3 if filter = null
@@ -85,17 +95,19 @@ public class Preferences {
         setHomopolymerSuppression(Boolean.valueOf(SettingsLogger.get(SettingsLogger.Homopolymer)));
         setHammingDistanceFilter(Boolean.valueOf(SettingsLogger.get(SettingsLogger.Hamming)));
         setSeqLevDistanceFilter(Boolean.valueOf(SettingsLogger.get(SettingsLogger.SeqLev)));
+        setPhaseshiftDistanceFilter(Boolean.valueOf(SettingsLogger.get(SettingsLogger.Phaseshift)));
         setMetric(Integer.parseInt(SettingsLogger.get(SettingsLogger.MetricD)));
     }
 
     public String[] get() {
-        String[] preferences = new String[6];
+        String[] preferences = new String[7];
         preferences[0] = "% min GC content : " + getGcContentMin();
         preferences[1] = "% max GC content : " + getGcContentMax();
         preferences[2] = "Homopolymer supression : " + homopolymerSuppression();
         preferences[3] = "Hamming filter : " + isHammingDistanceFilter();
         preferences[4] = "SeqLev filter : " + isSeqLevDistanceFilter();
-        preferences[5] = "metric : " + getMetric();
+        preferences[5] = "Phaseshift filter : " + isPhaseshiftDistanceFilter();
+        preferences[6] = "metric : " + getMetric();
         return (preferences);
     }
 
@@ -104,7 +116,9 @@ public class Preferences {
             return ("\"hamming\"");
         } else if (isSeqLevDistanceFilter()) {
             return ("\"seqlev\"");
-        } else {
+        } else if (isPhaseshiftDistanceFilter()) {
+            return ("\"phaseshift\"");
+        }else {
             return "NULL";
         }
     }
