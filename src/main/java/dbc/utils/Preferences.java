@@ -13,7 +13,7 @@ public class Preferences {
     private boolean hammingDistanceFilter;
     private boolean seqLevDistanceFilter;
     private boolean phaseshiftDistanceFilter;
-    private int metric;
+    private int distance;
 
     public Preferences() {
         if (java.util.prefs.Preferences.userRoot().get(SettingsLogger.Min_GC, null)== null){
@@ -23,7 +23,7 @@ public class Preferences {
             SettingsLogger.set(SettingsLogger.Hamming, "false");
             SettingsLogger.set(SettingsLogger.SeqLev, "false");
             SettingsLogger.set(SettingsLogger.Phaseshift, "false");
-            SettingsLogger.set(SettingsLogger.MetricD, "3");
+            SettingsLogger.set(SettingsLogger.Distance, "3");
         }
         setPreferences();
     }
@@ -76,16 +76,16 @@ public class Preferences {
         this.phaseshiftDistanceFilter = phaseshiftDistanceFilter;
     }
 
-    public Integer getMetric() {
+    public Integer getDistance() {
         if (isHammingDistanceFilter()|| isSeqLevDistanceFilter() || isPhaseshiftDistanceFilter()) {
-            return metric ;
+            return distance;
         } else {
             return (3);//beware the log text put na instead of 3 if filter = null
         }
     }
 
-    private void setMetric(int metric) {
-        this.metric = metric;
+    private void setDistance(int distance) {
+        this.distance = distance;
     }
 
     public void setPreferences() {
@@ -96,7 +96,7 @@ public class Preferences {
         setHammingDistanceFilter(Boolean.valueOf(SettingsLogger.get(SettingsLogger.Hamming)));
         setSeqLevDistanceFilter(Boolean.valueOf(SettingsLogger.get(SettingsLogger.SeqLev)));
         setPhaseshiftDistanceFilter(Boolean.valueOf(SettingsLogger.get(SettingsLogger.Phaseshift)));
-        setMetric(Integer.parseInt(SettingsLogger.get(SettingsLogger.MetricD)));
+        setDistance(Integer.parseInt(SettingsLogger.get(SettingsLogger.Distance)));
     }
 
     public String[] get() {
@@ -107,7 +107,7 @@ public class Preferences {
         preferences[3] = "Hamming filter : " + isHammingDistanceFilter();
         preferences[4] = "SeqLev filter : " + isSeqLevDistanceFilter();
         preferences[5] = "Phaseshift filter : " + isPhaseshiftDistanceFilter();
-        preferences[6] = "metric : " + getMetric();
+        preferences[6] = "distance : " + getDistance();
         return (preferences);
     }
 

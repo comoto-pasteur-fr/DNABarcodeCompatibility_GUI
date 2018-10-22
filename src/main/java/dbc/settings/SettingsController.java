@@ -35,7 +35,7 @@ public class SettingsController implements Initializable{
 
     /** The value of the distance (Hamming or Seqlev) if selected.*/
     @FXML
-    private TextField metric;
+    private TextField distance;
 
     /** if SeqLev distance have to be taken to account.*/
     @FXML
@@ -78,15 +78,15 @@ public class SettingsController implements Initializable{
         SettingsLogger.set(SettingsLogger.Hamming, Boolean.toString(hamming.isSelected()));
         SettingsLogger.set(SettingsLogger.SeqLev, Boolean.toString(seqlev.isSelected()));
         SettingsLogger.set(SettingsLogger.Phaseshift, Boolean.toString(phaseshift.isSelected()));
-        SettingsLogger.set(SettingsLogger.MetricD, metric.getText());
+        SettingsLogger.set(SettingsLogger.Distance, distance.getText());
 
 
-        if(Integer.parseInt(metric.getText()) <= this.seqLength){
-            SettingsLogger.set(SettingsLogger.MetricD, metric.getText());
+        if(Integer.parseInt(distance.getText()) <= this.seqLength){
+            SettingsLogger.set(SettingsLogger.Distance, distance.getText());
         }else{
             ErrorMessage.showMessage("Please enter a suitable value (< DNA sequence)");
         }
-        SettingsLogger.set(SettingsLogger.MetricD, metric.getText());
+        SettingsLogger.set(SettingsLogger.Distance, distance.getText());
         modification = true;
         ((Stage)this.minGC.getScene().getWindow()).close();
     }
@@ -105,7 +105,7 @@ public class SettingsController implements Initializable{
         this.setHammingMetric();
         this.seqlev.setSelected(false);
         this.setSeqlevMetric();
-        this.metric.setText("3");
+        this.distance.setText("3");
     }
 
     @FXML
@@ -116,7 +116,7 @@ public class SettingsController implements Initializable{
     @FXML
     void setHammingMetric(){
         if(this.hamming.isSelected()){
-            this.metric.setEditable(true);
+            this.distance.setEditable(true);
             this.seqlev.setSelected(false);
             this.phaseshift.setSelected(false);
         }
@@ -125,7 +125,7 @@ public class SettingsController implements Initializable{
     @FXML
     void setSeqlevMetric(){
         if(this.seqlev.isSelected()){
-            this.metric.setEditable(true);
+            this.distance.setEditable(true);
             this.hamming.setSelected(false);
             this.phaseshift.setSelected(false);
         }
@@ -135,7 +135,7 @@ public class SettingsController implements Initializable{
     @FXML
     void setPhaseshiftMetric(){
         if(this.phaseshift.isSelected()){
-            this.metric.setEditable(true);
+            this.distance.setEditable(true);
             this.hamming.setSelected(false);
             this.seqlev.setSelected(false);
         }
@@ -152,7 +152,7 @@ public class SettingsController implements Initializable{
         this.hamming.setSelected(Boolean.parseBoolean(SettingsLogger.get(SettingsLogger.Hamming)));
         this.seqlev.setSelected(Boolean.parseBoolean(SettingsLogger.get(SettingsLogger.SeqLev)));
         this.phaseshift.setSelected(Boolean.parseBoolean(SettingsLogger.get(SettingsLogger.Phaseshift)));
-        this.metric.setText(SettingsLogger.get(SettingsLogger.MetricD));
+        this.distance.setText(SettingsLogger.get(SettingsLogger.Distance));
     }
 
 }

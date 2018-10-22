@@ -17,7 +17,7 @@ public class SettingsLogger {
     public static final String Hamming = "Hamming";
     public static final String SeqLev = "SeqLev";
     public static final String Phaseshift = "Phaseshift";
-    public static final String MetricD = "MetricD";
+    public static final String Distance = "Distance";
 
 
     public static void set(String key, String value) {

@@ -71,7 +71,7 @@
          <VBox.margin>
             <Insets bottom="5.0" />
          </VBox.margin>
-         <Label text="Distance">
+         <Label text="Metric">
             <VBox.margin>
                <Insets left="20.0" top="10.0" />
             </VBox.margin>
@@ -118,7 +118,7 @@
                   <Insets top="5.0" />
                </HBox.margin>
             </CheckBox>
-            <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" text="Metric">
+            <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="50.0" text="Distance">
                <HBox.margin>
                   <Insets left="20.0" top="5.0" />
                </HBox.margin>
@@ -126,7 +126,7 @@
                   <Font size="11.0" />
                </font>
             </Label>
-            <TextField fx:id="metric" alignment="BASELINE_CENTER" editable="false" maxHeight="-Infinity" prefHeight="10.0" prefWidth="40.0" text="3">
+            <TextField fx:id="distance" alignment="BASELINE_CENTER" editable="false" maxHeight="-Infinity" prefHeight="10.0" prefWidth="40.0" text="3">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>

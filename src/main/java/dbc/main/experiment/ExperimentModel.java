@@ -178,7 +178,7 @@ import javax.swing.event.ChangeListener;
     }
 
     public static String getD() {
-        return ExperimentModel.getPreferences().getMetric().toString();
+        return ExperimentModel.getPreferences().getDistance().toString();
     }
 
     public static AdapterList getAdapters(int number) {
