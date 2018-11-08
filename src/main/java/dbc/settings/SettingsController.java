@@ -53,8 +53,7 @@ public class SettingsController implements Initializable{
     @FXML
     private TextField maxGC;
 
-    @FXML
-    private Button save;
+
 
     /**
      * Initialize the window.

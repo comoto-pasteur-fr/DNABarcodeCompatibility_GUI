@@ -85,18 +85,10 @@ public class ExperimentController implements Initializable {
      */
     private String[] tableResultName;
 
-    /**
-     * the file status.
-     */
-    //private boolean fileLoaded;
 
-    private BooleanProperty experimentDone;
     /**
      * Initialisation of the window, loading of R engine.
      */
-
-    private String extensions = "\"*.txt\", \"*.csv\"";
-
     public ExperimentController() {
 
     }

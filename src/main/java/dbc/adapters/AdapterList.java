@@ -44,16 +44,7 @@ public class AdapterList extends ArrayList<Adapter>{
         this.lengthSeq = (this.get(0).getLength());
     }
 
-    public double getSelected() {
-        int i = 0;
-        for(Adapter a : this){
-           if (a.isSelected()) {
-               i++;
-           }
-        }
-        this.selected =  ((double)i/(double)this.size()*100);
-        return selected;
-    }
+
 
     public String [] info(){
         String [] info = new String[this.size()];
