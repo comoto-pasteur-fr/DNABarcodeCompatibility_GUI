@@ -101,7 +101,18 @@ public class MainController implements Initializable{
     }
 
 
-
+    /**
+     * Display the user setting window.
+     */
+    @FXML
+    protected void showAbout() {
+        System.out.println("about window");
+        AboutLoader about = new AboutLoader();
+        Stage stage = new Stage(StageStyle.DECORATED);
+        stage.setTitle("About DNA Barcode Compatibility");
+        stage.setScene(new Scene(about.getTheParent()));
+        stage.showAndWait();
+    }
 
 
 

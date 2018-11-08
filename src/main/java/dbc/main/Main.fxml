@@ -5,7 +5,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="dbc.main.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbc.main.MainController">
    <top>
        <MenuBar BorderPane.alignment="CENTER">
            <Menu mnemonicParsing="false" text="File">
@@ -14,11 +14,10 @@
                <MenuItem fx:id="switchExperiment" mnemonicParsing="false" onAction="#switchExperiment" text="Switch loader type" />
                <MenuItem mnemonicParsing="false" onAction="#onFileClose" text="Exit" />
            </Menu>
-           <Menu mnemonicParsing="false" text="About">
-               <MenuItem mnemonicParsing="false" text="Delete" />
-           </Menu>
            <Menu mnemonicParsing="false" text="Help">
-               <MenuItem mnemonicParsing="false" text="About" />
+            <items>
+               <MenuItem mnemonicParsing="false" onAction="#showAbout" text="About Dna Barcode Compatibility" />
+            </items>
            </Menu>
        </MenuBar>
    </top>

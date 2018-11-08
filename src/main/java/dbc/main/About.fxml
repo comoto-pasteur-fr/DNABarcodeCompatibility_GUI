@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="277.0" prefWidth="437.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbc.main.AboutController">
+   <children>
+      <VBox layoutX="37.0" layoutY="14.0" prefHeight="277.0" prefWidth="437.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="47.0" prefWidth="437.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="4.0" prefHeight="40.0" prefWidth="391.0" text="DNA Barcode Compatibility">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets left="12.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+            <Pane prefHeight="28.0" prefWidth="437.0">
+               <children>
+                  <Label layoutX="95.0" layoutY="2.0" text="Version X92-3" />
+               </children>
+            </Pane>
+            <Pane prefHeight="64.0" prefWidth="437.0">
+               <children>
+                  <HBox prefHeight="52.0" prefWidth="437.0">
+                     <children>
+                        <Label prefHeight="53.0" prefWidth="127.0" text="Institut Pasteur">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Pane prefHeight="63.0" prefWidth="437.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="2.0" prefHeight="64.0" prefWidth="279.0" text="Cochlear Morphogenesis and tonotopy team" />
+               </children>
+            </Pane>
+            <Pane prefHeight="56.0" prefWidth="437.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="5.0" prefHeight="35.0" prefWidth="186.0" text="Licence GPL-2" />
+               </children>
+            </Pane>
+            <Pane prefHeight="63.0" prefWidth="437.0">
+               <children>
+                  <Label layoutX="6.0" layoutY="17.0" text="Maintener : Céline Trébeau">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
