@@ -29,6 +29,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
@@ -49,10 +50,10 @@ public class ExperimentController implements Initializable {
     private TextArea logPane;
 
     /**
-     * the possible choice of chemistry.
+     * the possible choice of platform.
      */
     @FXML
-    private ComboBox<String> chemistry;
+    private ComboBox<String> platform;
 
 
     /**
@@ -94,6 +95,8 @@ public class ExperimentController implements Initializable {
      * Initialisation of the window, loading of R engine.
      */
 
+    private String extensions = "\"*.txt\", \"*.csv\"";
+
     public ExperimentController() {
 
     }
@@ -102,9 +105,10 @@ public class ExperimentController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         this.getMx().valueProperty().addListener((observable, oldValue, newValue) ->
                 ExperimentModel.setMultiplexingLevel(newValue));
-        this.getChemistry().valueProperty().addListener((observable, oldValue, newValue) ->
-                ExperimentModel.setChemistry(newValue.substring(0, 1)));
-        getChemistry().getItems().addAll("4-channel", "2-channel", "1-channel");
+        this.getPlatform().valueProperty().addListener((observable, oldValue, newValue) ->
+
+                ExperimentModel.setPlatform(newValue));
+        getPlatform().getItems().addAll("MiSeq ™, HiSeq ™", "MiniSeq ™, NextSeq ™, NovaSeq ™", "iSeq100 ™", "Other Platform");
 
     }
 
@@ -192,7 +196,8 @@ public class ExperimentController implements Initializable {
         if (this.visual.getContent() != null) {
             this.visual.setContent(null);
         }
-        LayoutGrid visualLayout = new LayoutGrid(nbLane, multiplexingLevel, result, Integer.parseInt(ExperimentModel.getChemistry()));
+        LayoutGrid visualLayout = new LayoutGrid(nbLane, multiplexingLevel, result, Integer.parseInt(ExperimentModel.getPlatform()));
+        System.out.print(ExperimentModel.getPlatform());
         this.visual.setContent(visualLayout);
     }
 
@@ -249,6 +254,15 @@ public class ExperimentController implements Initializable {
         return fileChooser;
     }
 
+    protected FileChooser chooseAFile(String initialFileNme, String title, String description, String[] extension) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle(title);
+        fileChooser.setInitialFileName(initialFileNme);
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(description, extension);
+        fileChooser.getExtensionFilters().add(extFilter);
+        return fileChooser;
+    }
+
     /**
      * Saves a content into a file.
      *
@@ -294,8 +308,8 @@ public class ExperimentController implements Initializable {
 
 
 
-    public ComboBox<String> getChemistry() {
-        return chemistry;
+    public ComboBox<String> getPlatform() {
+        return platform;
     }
 
     public ScrollPane getVisual() {
@@ -341,13 +355,6 @@ public class ExperimentController implements Initializable {
     }
 
 
-//    protected boolean isFileLoaded() {
-//        return fileLoaded;
-//    }
-//
-//    protected void setFileLoaded(boolean fileLoaded) {
-//        this.fileLoaded = fileLoaded;
-//    }
 
 
 

@@ -53,7 +53,7 @@ public class DualController extends ExperimentController {
     @FXML
     private void chooseFile1(){
         FileChooser fileChooser = chooseAFile(null,"Select a tab delimited text file",
-                "TXT files (*.txt)","*.txt");
+                "Flat file",new String []{"*.txt" ,"*.csv"});
         File file = fileChooser.showOpenDialog(null);
         try{
             String filepath = file.getAbsolutePath();
@@ -73,7 +73,7 @@ public class DualController extends ExperimentController {
     @FXML
     private void chooseFile2(){
         FileChooser fileChooser = chooseAFile(null,"Select a tab delimited text file",
-                "TXT files (*.txt)","*.txt");
+                "Flat file",new String []{"*.txt" ,"*.csv"});
         File file = fileChooser.showOpenDialog(null);
         try{
             String filepath = file.getAbsolutePath();
@@ -93,7 +93,7 @@ public class DualController extends ExperimentController {
     @FXML
     public void searchForASolution() {
         String mplexLevel = this.getMx().getValue();
-        if (getChemistry().getValue() != null && chooseFile1 && chooseFile2 && mplexLevel != null && !getSample().getText().equals("")) {
+        if (getPlatform().getValue() != null && chooseFile1 && chooseFile2 && mplexLevel != null && !getSample().getText().equals("")) {
             DualModel.setMultiplexingLevel(mplexLevel);
             DualModel.setMetric();
             DualModel.search();
@@ -102,8 +102,8 @@ public class DualController extends ExperimentController {
             String[][] df = DualModel.buildResult();
             buildResult(DualModel.getMultiplexingLevel(), df);
             setVisual(DualModel.nbLane(), DualModel.getMultiplexingLevel(), df);
-        } else if (getChemistry().getValue() == null) {
-            ErrorMessage.showMessage("Please enter a chemistry");
+        } else if (getPlatform().getValue() == null) {
+            ErrorMessage.showMessage("Please enter a platform");
         } else if (!chooseFile1) {
             ErrorMessage.showMessage("Please choose a first file");
         } else if (!chooseFile2) {

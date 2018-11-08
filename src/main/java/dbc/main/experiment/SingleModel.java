@@ -25,7 +25,7 @@ public class SingleModel extends ExperimentModel {
 
     public static void search(){
         EngineHandler.searchForSingleExperiment(SingleModel.indexDfName, SingleModel.getMultiplexingLevel(),
-                getChemistry(), SingleModel.getMetric(), SingleModel.getD(), SingleModel.getAdapters(0));
+                getPlatform(), SingleModel.getMetric(), SingleModel.getD(), SingleModel.getAdapters(0));
 
     }
 

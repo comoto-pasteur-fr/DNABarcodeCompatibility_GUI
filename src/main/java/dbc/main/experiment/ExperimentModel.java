@@ -15,7 +15,7 @@ import javax.swing.event.ChangeListener;
  public class ExperimentModel implements ChangeListener{
 
 
-    private static String chemistry;
+    private static String platform;
     private static String sampleNumber;
     private static String multiplexingLevel;
     private static Preferences preferences;
@@ -26,6 +26,7 @@ import javax.swing.event.ChangeListener;
     private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(ExperimentModel.class);
     private Loader loader;
     private static String metric;
+    private static String platformName;
 
     public static ExperimentModel current;
 
@@ -55,7 +56,7 @@ import javax.swing.event.ChangeListener;
 
     public static AdapterList fileReading(String indexName, String filePath) {
         filePath = filePath.replaceAll("\\\\", "/");/* just for R language */
-
+        System.out.println(filePath);
         AdapterList adapters = EngineHandler.getIndexList(indexName, filePath);
         if (adapters == null){
             LOGGER.error("FileLoading has failed");
@@ -116,9 +117,9 @@ import javax.swing.event.ChangeListener;
 
     public static void setExperimentLog(){
         if (filePaths[1]== null){
-            experimentLog.setLog(filePaths[0],getChemistry(),adaptersList[0],Integer.parseInt(sampleNumber), Integer.parseInt(multiplexingLevel));
+            experimentLog.setLog(filePaths[0], ExperimentModel.platformName,adaptersList[0],Integer.parseInt(sampleNumber), Integer.parseInt(multiplexingLevel));
         }else if (filePaths.length == 2){
-            experimentLog.setLog(filePaths[0],filePaths[1],getChemistry(),adaptersList[0],adaptersList[1],Integer.parseInt(sampleNumber), Integer.parseInt(multiplexingLevel));
+            experimentLog.setLog(filePaths[0],filePaths[1], ExperimentModel.platformName,adaptersList[0],adaptersList[1],Integer.parseInt(sampleNumber), Integer.parseInt(multiplexingLevel));
         }
     }
 
@@ -160,12 +161,21 @@ import javax.swing.event.ChangeListener;
         return loader;
     }
 
-    public static String getChemistry() {
-        return chemistry;
+    public static String getPlatform() {
+        return platform;
     }
 
-    public static void setChemistry(String chemistry) {
-        ExperimentModel.chemistry = chemistry;
+    public static void setPlatform(String platform) {
+        platformName = platform;
+        if (platform.equals("MiSeq ™, HiSeq ™")){
+            ExperimentModel.platform = "4";
+        }else if (platform.equals("MiniSeq ™, NextSeq ™, NovaSeq ™")){
+            ExperimentModel.platform = "2";
+        }else if (platform.equals("iSeq100 ™")){
+            ExperimentModel.platform = "1";
+        }else if (platform.equals("Other Platform")){
+            ExperimentModel.platform = "0";
+        }
     }
 
     public static String getMetric() {

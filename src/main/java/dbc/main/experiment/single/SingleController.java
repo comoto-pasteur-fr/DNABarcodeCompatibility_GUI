@@ -14,6 +14,8 @@ import javafx.stage.FileChooser;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class SingleController extends ExperimentController {
@@ -42,7 +44,7 @@ public class SingleController extends ExperimentController {
     @FXML
     private void chooseAndSetFile() {
         FileChooser fileChooser = chooseAFile(null, "Select a tab delimited text file",
-                "TXT files (*.txt)", "*.txt");
+                "TXT files (*.txt), CSV files (*.csv)", new String []{"*.txt" ,"*.csv"});
         File file = fileChooser.showOpenDialog(null);
         try {
             String filepath = file.getAbsolutePath();
@@ -64,7 +66,7 @@ public class SingleController extends ExperimentController {
     @FXML
     public void searchForASolution() {
         String mplexLevel = this.getMx().getValue();
-        if (getChemistry().getValue() != null &&
+        if (getPlatform().getValue() != null &&
                 fileLoaded && mplexLevel != null && !getSample().getText().equals("")) {
             SingleModel.setMultiplexingLevel(mplexLevel);
             SingleModel.setMetric();
@@ -74,8 +76,8 @@ public class SingleController extends ExperimentController {
             String[][] df = SingleModel.buildResult();
             buildResult(SingleModel.getMultiplexingLevel(), df);
             setVisual(SingleModel.nbLane(), SingleModel.getMultiplexingLevel(), df);
-        } else if (getChemistry().getValue() == null) {
-            ErrorMessage.showMessage("Please enter a chemistry");
+        } else if (getPlatform().getValue() == null) {
+            ErrorMessage.showMessage("Please enter a platform");
         } else if (!fileLoaded) {
             ErrorMessage.showMessage("Please choose a file");
         } else if (getSample().getText().equals("")) {

@@ -59,8 +59,8 @@
                             <TextField fx:id="sample" alignment="BASELINE_CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
                             <Label text="Multiplexing level" GridPane.rowIndex="3" />
                             <ComboBox fx:id="mx" onMousePressed="#buildMultiplexingLevel" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" />
-                            <Label text="Chemistry" />
-                            <ComboBox fx:id="chemistry" prefHeight="27.0" prefWidth="188.0" promptText="Choose a system" GridPane.columnIndex="1" GridPane.columnSpan="2147483647">
+                            <Label text="Platform" />
+                            <ComboBox fx:id="platform" prefHeight="27.0" prefWidth="188.0" promptText="Choose a system" GridPane.columnIndex="1" GridPane.columnSpan="2147483647">
                                 <GridPane.margin>
                                     <Insets />
                                 </GridPane.margin>

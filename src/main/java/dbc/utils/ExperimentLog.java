@@ -19,14 +19,14 @@ public class ExperimentLog extends ArrayList<String>{
         this.preferences = preferences;
     }
 
-    public void setLog(String filePath, String chemistry, AdapterList adapters, int sampleNumber, int multiplexingLevel){
+    public void setLog(String filePath, String platform, AdapterList adapters, int sampleNumber, int multiplexingLevel){
         this.clear();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
         this.date = new Date();
         this.add(simpleDateFormat.format(this.date));
         this.add("");
         this.add("File : "+ filePath);
-        this.add("Chemistry : " + chemistry);
+        this.add("Platform : " + platform);
         this.add("Sequence length : "+ Integer.toString(adapters.getLengthSeq()));
         this.add("Sample number : " + sampleNumber);
         this.add("Multiplexing level : "+ multiplexingLevel);
@@ -35,14 +35,14 @@ public class ExperimentLog extends ArrayList<String>{
         this.addAll(Arrays.asList(adapters.info()));
     }
 
-    public void setLog(String filePath1,String filePath2,String chemistry, AdapterList adapters1,AdapterList adapters2,int sampleNumber, int multiplexingLevel){
+    public void setLog(String filePath1,String filePath2,String platform, AdapterList adapters1,AdapterList adapters2,int sampleNumber, int multiplexingLevel){
         this.clear();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
         this.add(simpleDateFormat.format(new Date()));
         this.add("");
         this.add("File1 : "+ filePath1);
         this.add("File2 : "+ filePath2);
-        this.add("Chemistry : " + chemistry);
+        this.add("Platform : " + platform);
         this.add("Sequence length file1: "+ Integer.toString(adapters1.getLengthSeq()));
         this.add("Sequence length file2: "+ Integer.toString(adapters2.getLengthSeq()));
         this.add("Sample number : " + sampleNumber);

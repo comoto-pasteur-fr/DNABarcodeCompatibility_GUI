@@ -28,7 +28,7 @@ public class DualModel extends ExperimentModel {
                 DualModel.indexDfName1,
                 DualModel.indexDfName2,
                 DualModel.getMultiplexingLevel(),
-                DualModel.getChemistry(),
+                DualModel.getPlatform(),
                 DualModel.getMetric(),
                 DualModel.getD(),
                 DualModel.getAdapters(0),

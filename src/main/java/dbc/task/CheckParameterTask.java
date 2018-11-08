@@ -6,13 +6,13 @@ import javafx.concurrent.Task;
 public class CheckParameterTask extends Task<Boolean> {
 
     private final String mx;
-    private final String chemistry;
+    private final String platform;
     private final boolean isAnInteger;
     private final boolean fileLoaded;
 
-    public CheckParameterTask(String mx, String chemistry, boolean isAnInteger, boolean fileLoaded) {
+    public CheckParameterTask(String mx, String platform, boolean isAnInteger, boolean fileLoaded) {
         this.mx = mx;
-        this.chemistry = chemistry;
+        this.platform = platform;
         this.isAnInteger = isAnInteger;
         this.fileLoaded = fileLoaded;
     }
@@ -24,7 +24,7 @@ public class CheckParameterTask extends Task<Boolean> {
 
     private boolean checkParameters() {
         boolean goodParameters = false;
-        if (chemistry != null) {
+        if (platform != null) {
             if (isAnInteger) {
                 if (mx != null) {
 
@@ -49,7 +49,7 @@ public class CheckParameterTask extends Task<Boolean> {
             }
         } else {
             this.getOnFailed();
-            updateMessage("Please select a type of chemistry");
+            updateMessage("Please select a type of platform");
         }
         return goodParameters;
     }

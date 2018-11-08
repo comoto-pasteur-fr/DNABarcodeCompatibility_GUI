@@ -10,7 +10,7 @@ import javafx.scene.layout.VBox;
 
 /**
  *
- * Constructs the visual table grid result according to the type of chemistry and if the experiment is single or dual.
+ * Constructs the visual table grid result according to the type of platform and if the experiment is single or dual.
  */
 public class LayoutGrid extends Pane {
 
@@ -35,8 +35,8 @@ public class LayoutGrid extends Pane {
     /** The type of experiment.*/
     private int singleOrDual;
 
-    /** The chemistry of the experiment.*/
-    private int chemistry;
+    /** The platform of the experiment.*/
+    private int platform;
 
     /**
      * Constructor.
@@ -44,11 +44,11 @@ public class LayoutGrid extends Pane {
      * @param nbLane the number of lanes
      * @param multiplexingLevel the multiplexing level
      * @param result the result provide by the R Package
-     * @param chemistry the chemistry of the experiment
+     * @param platform the platform of the experiment
      */
-    public LayoutGrid (int nbLane,String multiplexingLevel, String [][] result , int chemistry){
+    public LayoutGrid (int nbLane,String multiplexingLevel, String [][] result , int platform){
         this.singleOrDual = result[0].length;
-        this.chemistry = chemistry;
+        this.platform = platform;
         this.gridPane = new GridPane();
         this.getChildren().add(this.gridPane);
         this.gridPane.setLayoutX(60.0);
@@ -81,7 +81,7 @@ public class LayoutGrid extends Pane {
                 laneResult[i] = new VBox(5.9);
                 laneLabels[i] = new LaneLabel("Lane " + Integer.toString(i+1));
                 for (int j = i * multiplexingLevel; j < (i + 1) * multiplexingLevel; j++) {
-                    taggedSamples[j] = new TaggedSample(result[j], chemistry);
+                    taggedSamples[j] = new TaggedSample(result[j], platform);
                     laneResult[i].getChildren().add(taggedSamples[j]);
                 }
             }

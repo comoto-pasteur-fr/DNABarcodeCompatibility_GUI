@@ -101,18 +101,18 @@ public class EngineHandler {
     }
 
 
-    private static void getResult1(String chemistry, String metric, String d) {
+    private static void getResult1(String platform, String metric, String d) {
         sampleNumber();
         mx();
-        EngineHandler.getEngine().eval("result1 = DNABarcodeCompatibility:::final_result(index1, sample_number, mplex_level, chemistry = " +
-                chemistry + ", metric =" + metric + ", d = " + d + ")");
+        EngineHandler.getEngine().eval("result1 = DNABarcodeCompatibility:::final_result(index1, sample_number, mplex_level, platform = " +
+                platform + ", metric =" + metric + ", d = " + d + ")");
     }
 
-    private static void getResultDual(String chemistry, String metric, String d) {
+    private static void getResultDual(String platform, String metric, String d) {
         sampleNumber();
         mx();
         EngineHandler.getEngine().eval("result = DNABarcodeCompatibility:::final_result_dual(index1, index2, sample_number, mplex_level," +
-                " chemistry = " + chemistry + ", metric = " + metric + ", d = " + d + ")");
+                " platform = " + platform + ", metric = " + metric + ", d = " + d + ")");
         engine.eval("mplex_level").asString();
         engine.eval("result");
         engine.eval("index1");
@@ -133,6 +133,7 @@ public class EngineHandler {
     }
 
     public static AdapterList getIndexList(String indexDfName, String filePath){
+        engine.assign("error_message","");
         file(indexDfName, filePath);
         if (EngineHandler.error()== null ||EngineHandler.error().equals("")) {
             return(buildAdapters(indexDfName));
@@ -162,7 +163,7 @@ public class EngineHandler {
     }
 
     public static void searchForSingleExperiment(String indexDfName, String mplex_level,
-                                                 String chemistry, String metric, String d, AdapterList adapterList){
+                                                 String platform, String metric, String d, AdapterList adapterList){
 
         index("index1 ", indexDfName);
         assign("mplex_level",mplex_level);
@@ -172,13 +173,13 @@ public class EngineHandler {
         String javavector = "c(" + regex + ")";
         engine.eval("regex =" + javavector);
         engine.eval("index1 = filter(index1,!(Id %in% regex))");
-        getResult1(chemistry,metric,d);
+        getResult1(platform,metric,d);
     }
 
     public static void searchForDualExperiment(String indexDfName1,
                                                String indexDfName2 ,
                                                String mplex_level,
-                                               String chemistry,
+                                               String platform,
                                                String metric,
                                                String d,
                                                AdapterList adapterList1,
@@ -197,7 +198,7 @@ public class EngineHandler {
         engine.eval("index1 = index1 %>% filter(Id != regex)");
         engine.eval("regex =" + javaVector2);
         engine.eval("index2 = index2 %>% filter(Id != regex)");
-        getResultDual(chemistry, metric, d);
+        getResultDual(platform, metric, d);
     }
 
     public static String [][] buildSingleTableResult(){
