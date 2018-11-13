@@ -4,6 +4,8 @@ import dbc.engine.EngineHandler;
 import dbc.main.experiment.ExperimentController;
 import dbc.main.experiment.dual.Dual;
 import dbc.main.experiment.single.SingleLoader;
+import dbc.main.experiment.visual.htmlOutput.DocumentationPage;
+import dbc.main.experiment.visual.htmlOutput.TutorialPage;
 import dbc.settings.SettingsLogger;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -106,7 +108,6 @@ public class MainController implements Initializable{
      */
     @FXML
     protected void showAbout() {
-        System.out.println("about window");
         AboutLoader about = new AboutLoader();
         Stage stage = new Stage(StageStyle.DECORATED);
         stage.setTitle("About DNA Barcode Compatibility");
@@ -115,6 +116,25 @@ public class MainController implements Initializable{
     }
 
 
+    @FXML
+    void showTutorial() {
+        TutorialPage browser = new TutorialPage();
+        Stage stage = new Stage();
+        stage.setTitle("Dna Barcode Compatibility Tutorial");
+        Scene scene = new Scene(browser);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void showDocumentation() {
+        DocumentationPage browser = new DocumentationPage();
+        Stage stage = new Stage();
+        stage.setTitle("Dna Barcode Compatibility Tutorial");
+        Scene scene = new Scene(browser);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 
 }
