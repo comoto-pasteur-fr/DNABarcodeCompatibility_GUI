@@ -16,7 +16,9 @@
            </Menu>
            <Menu mnemonicParsing="false" text="Help">
             <items>
-               <MenuItem mnemonicParsing="false" onAction="#showAbout" text="About Dna Barcode Compatibility" />
+               <MenuItem mnemonicParsing="false" onAction="#showAbout" text="About DNA Barcode Compatibility" />
+               <MenuItem mnemonicParsing="false" onAction="#showDocumentation" text="Documentation" />
+               <MenuItem mnemonicParsing="false" onAction="#showTutorial" text="Tutorial" />
             </items>
            </Menu>
        </MenuBar>
