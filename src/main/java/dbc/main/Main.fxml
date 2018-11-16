@@ -11,7 +11,8 @@
            <Menu mnemonicParsing="false" text="File">
                <MenuItem mnemonicParsing="false" onAction="#exportResult" text="Export result" />
                <MenuItem mnemonicParsing="false" onAction="#exportLog" text="Export log" />
-               <MenuItem fx:id="switchExperiment" mnemonicParsing="false" onAction="#switchExperiment" text="Switch loader type" />
+               <MenuItem mnemonicParsing="false" onAction="#SingleExperiment" text="Single indexing" />
+            <MenuItem mnemonicParsing="false" onAction="#DualExperiment" text="Dual indexing" />
             <MenuItem mnemonicParsing="false" onAction="#setRWindow" text="Define R paths" />
                <MenuItem mnemonicParsing="false" onAction="#onFileClose" text="Exit" />
            </Menu>

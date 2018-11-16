@@ -1,7 +1,10 @@
 package dbc.main;
 
 import dbc.engine.EngineHandler;
+import dbc.main.experiment.DualModel;
 import dbc.main.experiment.ExperimentController;
+import dbc.main.experiment.ExperimentModel;
+import dbc.main.experiment.SingleModel;
 import dbc.main.experiment.dual.Dual;
 import dbc.main.experiment.single.SingleLoader;
 import dbc.main.experiment.visual.htmlOutput.DocumentationPage;
@@ -81,16 +84,18 @@ public class MainController implements Initializable{
     }
 
     @FXML
-    public void switchExperiment(){
-        if(Main.getBorderPane().getCenter() instanceof SingleLoader){
-            Main.getBorderPane().setCenter(new Dual());
-        }else {
-            Main.getBorderPane().setCenter(new SingleLoader());
-        }
-
-
+    public void SingleExperiment(){
+        ExperimentModel experimentDesign = new SingleModel(new SingleLoader());
+        Main.getBorderPane().setCenter(experimentDesign.getLoader());
+        this.setExperimentController(experimentDesign.getExperimentController());
     }
 
+    @FXML
+    public void DualExperiment(){
+        ExperimentModel experimentDesign = new DualModel(new Dual());
+        Main.getBorderPane().setCenter(experimentDesign.getLoader());
+        this.setExperimentController(experimentDesign.getExperimentController());
+    }
     @FXML
     protected void setRWindow(){
         RPathLoader loader = new RPathLoader();
@@ -98,7 +103,7 @@ public class MainController implements Initializable{
         stage.setTitle("Choose your path(s) to R...");
         stage.setScene(new Scene(loader.getTheParent()));
         stage.showAndWait();
-        this.chooseExperiment();
+        Main.getBorderPane().setCenter(new SingleLoader());
     }
 
     public void setExperimentController(ExperimentController experimentController) {

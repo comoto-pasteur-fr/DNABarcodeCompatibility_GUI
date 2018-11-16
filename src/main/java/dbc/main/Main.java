@@ -70,12 +70,9 @@ public class Main extends Application {
         String choice = mainController.chooseExperiment();
 
         if (choice.equals("Single")) {
-            ExperimentModel experimentDesign = new SingleModel(new SingleLoader());
-            borderPane.setCenter(experimentDesign.getLoader());
-            mainController.setExperimentController(experimentDesign.getExperimentController());
+            mainController.SingleExperiment();
         } else if (choice.equals("Dual")){
-            ExperimentModel experimentDesign = new DualModel(new Dual());
-            borderPane.setCenter(experimentDesign.getLoader());
+            mainController.DualExperiment();
         }else if (choice.equals("R Settings")){
             mainController.setRWindow();
         }
