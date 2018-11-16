@@ -248,7 +248,9 @@ public class EngineHandler {
         return (df);
     }
 
-
+    public static boolean exist(){
+        return (engine != null);
+    }
 
     public static void assign(String  variable, String value){
         engine.assign(variable, value);

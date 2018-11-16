@@ -52,8 +52,6 @@ import javax.swing.event.ChangeListener;
         startREngineTask.setOnFailed((event) -> ErrorMessage.showMessage("The R engine has failed."));
     }
 
-
-
     public static AdapterList fileReading(String indexName, String filePath) {
         filePath = filePath.replaceAll("\\\\", "/");/* just for R language */
         System.out.println(filePath);

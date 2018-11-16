@@ -53,7 +53,7 @@ public class DualController extends ExperimentController {
     @FXML
     private void chooseFile1(){
         FileChooser fileChooser = chooseAFile(null,"Select a tab delimited text file",
-                "Flat file",new String []{"*.txt" ,"*.csv"});
+                "Flat files",new String []{"*.txt" ,"*.csv","*.fasta"});
         File file = fileChooser.showOpenDialog(null);
         try{
             String filepath = file.getAbsolutePath();
@@ -73,7 +73,7 @@ public class DualController extends ExperimentController {
     @FXML
     private void chooseFile2(){
         FileChooser fileChooser = chooseAFile(null,"Select a tab delimited text file",
-                "Flat file",new String []{"*.txt" ,"*.csv"});
+                "Flat files",new String []{"*.txt" ,"*.csv","*.fasta"});
         File file = fileChooser.showOpenDialog(null);
         try{
             String filepath = file.getAbsolutePath();

@@ -37,7 +37,10 @@ public class Main extends Application {
         primaryStage.show();
         primaryStage.setOnCloseRequest(event -> {
             Platform.exit();
-            EngineHandler.killEngine();
+            if (EngineHandler.exist()) {
+                System.out.println("engine status : " + EngineHandler.exist());
+                EngineHandler.killEngine();
+            }
         });
         MainController mainController = loader.getController();
         if (SettingsLogger.get(ENV_PROPERTY_R_HOME)== null|| SettingsLogger.get(JAVA_LIBRARY_PATH )== null || SettingsLogger.get(JAVA_LIBRARY_PATH ).equals("")){
@@ -70,9 +73,11 @@ public class Main extends Application {
             ExperimentModel experimentDesign = new SingleModel(new SingleLoader());
             borderPane.setCenter(experimentDesign.getLoader());
             mainController.setExperimentController(experimentDesign.getExperimentController());
-        } else {
+        } else if (choice.equals("Dual")){
             ExperimentModel experimentDesign = new DualModel(new Dual());
             borderPane.setCenter(experimentDesign.getLoader());
+        }else if (choice.equals("R Settings")){
+            mainController.setRWindow();
         }
     }
 

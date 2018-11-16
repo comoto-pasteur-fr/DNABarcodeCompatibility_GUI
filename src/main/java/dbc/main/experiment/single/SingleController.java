@@ -44,7 +44,7 @@ public class SingleController extends ExperimentController {
     @FXML
     private void chooseAndSetFile() {
         FileChooser fileChooser = chooseAFile(null, "Select a tab delimited text file",
-                "TXT files (*.txt), CSV files (*.csv)", new String []{"*.txt" ,"*.csv"});
+                "Flat files", new String []{"*.txt" ,"*.csv","*.fasta"});
         File file = fileChooser.showOpenDialog(null);
         try {
             String filepath = file.getAbsolutePath();

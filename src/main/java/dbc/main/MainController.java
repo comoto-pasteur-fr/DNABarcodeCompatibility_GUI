@@ -33,7 +33,10 @@ public class MainController implements Initializable{
 
     public void onFileClose() {
         LOGGER.info("Closing app ..");
-        EngineHandler.killEngine();
+        if (EngineHandler.exist()) {
+            System.out.println("engine status : " + EngineHandler.exist());
+            EngineHandler.killEngine();
+        }
         Platform.exit();
     }
 
@@ -55,8 +58,7 @@ public class MainController implements Initializable{
         LOGGER.info("Showing experiment choice dialog ...");
 
         ChoiceDialog<String> alert;
-        alert = new ChoiceDialog<>("Single", "Single", "Dual");
-
+        alert = new ChoiceDialog<>("", "Single", "Dual", "R Settings");
         alert.setTitle("Choose an experiment");
         alert.setHeaderText("Single or Dual indexing ? ");
         alert.setResizable(false);
@@ -89,6 +91,7 @@ public class MainController implements Initializable{
 
     }
 
+    @FXML
     protected void setRWindow(){
         RPathLoader loader = new RPathLoader();
         Stage stage = new Stage(StageStyle.DECORATED);
@@ -112,6 +115,7 @@ public class MainController implements Initializable{
         Stage stage = new Stage(StageStyle.DECORATED);
         stage.setTitle("About DNA Barcode Compatibility");
         stage.setScene(new Scene(about.getTheParent()));
+        stage.setResizable(true);
         stage.showAndWait();
     }
 
@@ -130,7 +134,7 @@ public class MainController implements Initializable{
     void showDocumentation() {
         DocumentationPage browser = new DocumentationPage();
         Stage stage = new Stage();
-        stage.setTitle("Dna Barcode Compatibility Tutorial");
+        stage.setTitle("Dna Barcode Compatibility Documentation");
         Scene scene = new Scene(browser);
         stage.setScene(scene);
         stage.show();
