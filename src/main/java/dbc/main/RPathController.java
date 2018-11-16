@@ -71,6 +71,7 @@ public class RPathController implements Initializable {
 
     @FXML
     public void saveRPaths() throws LibraryException {
+        SettingsLogger.set(SettingsLogger.R_HOME, this.textFieldArrayList.get(0).getText());
         for (TextField tf : textFieldArrayList) {
             try {
                 Files.find(Paths.get(tf.getText()),
@@ -83,6 +84,7 @@ public class RPathController implements Initializable {
                             LOGGER.info("Dossier parent  " + f.toAbsolutePath().getParent());
                             SettingsLogger.set(JAVA_LIBRARY_PATH, f.toAbsolutePath().getParent().toString());
                         });
+
             } catch (IOException e) {
                 LOGGER.error("Java library path isn't correct");
             }
