@@ -98,6 +98,7 @@ public class MainController implements Initializable{
         stage.setTitle("Choose your path(s) to R...");
         stage.setScene(new Scene(loader.getTheParent()));
         stage.showAndWait();
+        this.chooseExperiment();
     }
 
     public void setExperimentController(ExperimentController experimentController) {
