@@ -16,14 +16,17 @@ public class Preferences {
     private int distance;
 
     public Preferences() {
-        if (java.util.prefs.Preferences.userRoot().get(SettingsLogger.Min_GC, null)== null){
+        if (java.util.prefs.Preferences.userRoot().get(SettingsLogger.Min_GC, null)== null||
+       java.util.prefs.Preferences.userRoot().get(SettingsLogger.Version, null) != "1.0.0") {
             SettingsLogger.set(SettingsLogger.Min_GC, "0");
-            SettingsLogger.set(SettingsLogger.Max_GC, "100");
+            SettingsLogger.set(SettingsLogger.Max_GC, "0");
             SettingsLogger.set(SettingsLogger.Homopolymer, "false");
             SettingsLogger.set(SettingsLogger.Hamming, "false");
             SettingsLogger.set(SettingsLogger.SeqLev, "false");
             SettingsLogger.set(SettingsLogger.Phaseshift, "false");
             SettingsLogger.set(SettingsLogger.Distance, "3");
+            SettingsLogger.set(SettingsLogger.Version, "1.0.0");
+
         }
         setPreferences();
     }
