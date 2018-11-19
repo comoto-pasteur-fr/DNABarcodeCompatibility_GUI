@@ -17,7 +17,7 @@ Start up / installation
 
 #### Download for all platforms
 
-* [DNABarcodeCompatibility_GUI.zip](https://www.dropbox.com/s/3ed2k69c68j2c9q/DNABarcodeCompatibility_GUI.zip?dl=0)
+* [DNABarcodeCompatibility_GUI.zip](https://www.dropbox.com/s/i5whrdhk3acn67n/DNABarcodeCompatibility_GUI.zip?dl=0)
 
 #### Quick start on Windows 10
 
