@@ -6,6 +6,7 @@ dbc.main.experiment
 dbc.main.experiment.dual
 dbc.main.experiment.single
 dbc.main.experiment.visual
+dbc.main.experiment.visual.htmlOutput
 dbc.settings
 dbc.task
 dbc.utils
