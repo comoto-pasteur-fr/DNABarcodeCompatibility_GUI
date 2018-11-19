@@ -18,6 +18,7 @@ public class SettingsLogger {
     public static final String SeqLev = "SeqLev";
     public static final String Phaseshift = "Phaseshift";
     public static final String Distance = "Distance";
+    public static final String Version = "1.0.0";
 
 
     public static void set(String key, String value) {
